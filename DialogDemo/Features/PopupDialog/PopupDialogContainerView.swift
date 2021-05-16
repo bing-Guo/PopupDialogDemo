@@ -47,7 +47,7 @@ class PopupDialogContainerView: UIView {
     }()
 
     // MARK: - Constructor
-    override init(frame: CGRect) {
+    @objc override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupViews()
