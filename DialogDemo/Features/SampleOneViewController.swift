@@ -10,7 +10,26 @@ class SampleOneViewController: UIViewController {
     }()
     let describeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hello, This is a dialog demo.\nHello, This is a dialog demo.\nHello, This is a dialog demo."
+        label.text = """
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        Hello, This is a dialog demo.
+        """
         label.numberOfLines = 0
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -4,6 +4,9 @@ private extension PopupDialogContainerView {
     struct Constants {
         static let backgroundAlpha: CGFloat = 0.6
         static let alertPhoneWidth: CGFloat = 270
+        static let alertPadWidth: CGFloat = 375
+        static let alertPhoneHeight: CGFloat = 384
+        static let alertPadHeight: CGFloat = 500
         static let containerViewPadding: CGFloat = 16
     }
 }
@@ -61,10 +64,25 @@ class PopupDialogContainerView: UIView {
         shadowContainer.addSubview(container)
         container.addSubview(stackView)
         
-        NSLayoutConstraint.activate([
-            shadowContainer.widthAnchor.constraint(equalToConstant: Constants.alertPhoneWidth),
-            shadowContainer.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            shadowContainer.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+        var constraints = [NSLayoutConstraint]()
+        
+        if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
+            constraints = [
+                shadowContainer.widthAnchor.constraint(equalToConstant: Constants.alertPadWidth),
+                shadowContainer.heightAnchor.constraint(lessThanOrEqualToConstant: Constants.alertPadHeight),
+                shadowContainer.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                shadowContainer.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            ]
+        } else {
+            constraints = [
+                shadowContainer.widthAnchor.constraint(equalToConstant: Constants.alertPhoneWidth),
+                shadowContainer.heightAnchor.constraint(lessThanOrEqualToConstant: Constants.alertPhoneHeight),
+                shadowContainer.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                shadowContainer.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            ]
+        }
+        
+        constraints.append(contentsOf: [
             container.topAnchor.constraint(equalTo: shadowContainer.topAnchor),
             container.leftAnchor.constraint(equalTo: shadowContainer.leftAnchor),
             container.rightAnchor.constraint(equalTo: shadowContainer.rightAnchor),
@@ -74,5 +92,7 @@ class PopupDialogContainerView: UIView {
             stackView.rightAnchor.constraint(equalTo: container.rightAnchor, constant: -Constants.containerViewPadding),
             stackView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -Constants.containerViewPadding)
         ])
+        
+        NSLayoutConstraint.activate(constraints)
     }
 }
