@@ -14,7 +14,7 @@ class PopupDialogButton: UIButton {
     var dismissOnTap: Bool
     var buttonHeight: CGFloat
     
-    init(title: String, dismissOnTap: Bool = true, buttonHeight: CGFloat = 44, action: PopupDialogButtonAction?) {
+    @objc init(title: String, dismissOnTap: Bool = true, buttonHeight: CGFloat = 44, action: PopupDialogButtonAction?) {
         self.buttonAction = action
         self.dismissOnTap = dismissOnTap
         self.buttonHeight = buttonHeight

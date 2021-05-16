@@ -22,17 +22,17 @@ class ViewController: UIViewController {
         
         self.view.addSubview(button)
         
-        let okButton = PopupDialogDefaultButton(title: "NEXT", action: { [weak self] in
+        let nextButton = PopupDialogDefaultButton(title: "NEXT", action: { [weak self] in
             guard let self = self else { return }
             self.present(self.dialog2, animated: true, completion: nil)
         })
         
-        let cancelButton = PopupDialogDefaultButton(title: "OK", action: {
+        let okButton = PopupDialogDefaultButton(title: "OK", action: {
             print("OK!")
         })
         
-        dialog1.addButtons([okButton])
-        dialog2.addButtons([cancelButton])
+        dialog1.addButtons([nextButton])
+        dialog2.addButtons([okButton])
     }
     
     @objc func buttonTapped(_ sender: UIButton) {

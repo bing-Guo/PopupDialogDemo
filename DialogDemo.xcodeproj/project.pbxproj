@@ -21,6 +21,7 @@
 		3C389251265001E100F24427 /* PopupDialogPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C389250265001E100F24427 /* PopupDialogPresentationManager.swift */; };
 		3C61DA112650F515002AF5DC /* PopupDialogDefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C61DA102650F515002AF5DC /* PopupDialogDefaultButton.swift */; };
 		3C61DA132650FA9B002AF5DC /* SampleTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C61DA122650FA9B002AF5DC /* SampleTwoViewController.swift */; };
+		3C61DA17265117E6002AF5DC /* OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C61DA16265117E6002AF5DC /* OCViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,9 @@
 		3C389250265001E100F24427 /* PopupDialogPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogPresentationManager.swift; sourceTree = "<group>"; };
 		3C61DA102650F515002AF5DC /* PopupDialogDefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultButton.swift; sourceTree = "<group>"; };
 		3C61DA122650FA9B002AF5DC /* SampleTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTwoViewController.swift; sourceTree = "<group>"; };
+		3C61DA14265117E6002AF5DC /* DialogDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DialogDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		3C61DA15265117E6002AF5DC /* OCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
+		3C61DA16265117E6002AF5DC /* OCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,9 @@
 				3C3891D6264E505200F24427 /* ViewController.swift */,
 				3C389215264E7B3900F24427 /* SampleOneViewController.swift */,
 				3C61DA122650FA9B002AF5DC /* SampleTwoViewController.swift */,
+				3C61DA15265117E6002AF5DC /* OCViewController.h */,
+				3C61DA16265117E6002AF5DC /* OCViewController.m */,
+				3C61DA14265117E6002AF5DC /* DialogDemo-Bridging-Header.h */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -253,6 +260,7 @@
 				TargetAttributes = {
 					3C3891CE264E505200F24427 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1250;
 					};
 					3C3891E4264E505300F24427 = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -318,6 +326,7 @@
 				3C3891D7264E505200F24427 /* ViewController.swift in Sources */,
 				3C3891D3264E505200F24427 /* AppDelegate.swift in Sources */,
 				3C3891D5264E505200F24427 /* SceneDelegate.swift in Sources */,
+				3C61DA17265117E6002AF5DC /* OCViewController.m in Sources */,
 				3C61DA112650F515002AF5DC /* PopupDialogDefaultButton.swift in Sources */,
 				3C389251265001E100F24427 /* PopupDialogPresentationManager.swift in Sources */,
 				3C61DA132650FA9B002AF5DC /* SampleTwoViewController.swift in Sources */,
@@ -406,6 +415,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -467,6 +477,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -492,7 +503,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 435AM725KY;
 				INFOPLIST_FILE = DialogDemo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -501,6 +514,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bingkuo.DialogDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DialogDemo/Features/DialogDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -511,7 +526,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 435AM725KY;
 				INFOPLIST_FILE = DialogDemo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -520,6 +537,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bingkuo.DialogDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DialogDemo/Features/DialogDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -12,7 +12,7 @@ class PopupDialog: UIViewController {
     }
     
     // MARK: - Constructor
-    init(viewController: UIViewController, tapGestureDismissal: Bool = true) {
+    @objc init(viewController: UIViewController, tapGestureDismissal: Bool = true) {
         self.viewController = viewController
         self.presentationManager = PopupDialogPresentationManager()
         self.tapGestureDismissal = tapGestureDismissal
@@ -35,6 +35,10 @@ class PopupDialog: UIViewController {
         super.viewWillAppear(animated)
         
         appendButtons()
+    }
+    
+    deinit {
+        print("Deinit PopupDialog")
     }
     
     private func appendButtons() {
@@ -76,7 +80,7 @@ extension PopupDialog {
 
 // MARK: - Actions
 extension PopupDialog {
-    func addButtons(_ buttons: [PopupDialogButton]) {
+    @objc func addButtons(_ buttons: [PopupDialogButton]) {
         self.buttons += buttons
     }
     
